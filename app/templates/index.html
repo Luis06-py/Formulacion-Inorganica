@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Página de Inicio</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"/>
+	</head>
+	<body>
+		<script>
+			const tabla = JSON.parse('{{ tabla | tojson }}');
+		</script>
+		<h1>Formulario de Ejemplo</h1>
+		<form>
+			<label for="campo1">Campo 1:</label>
+			<input type="text" id="campo1" oninput="FUNCIONSAS(event);"/>
+
+			<br/>
+
+			<label for="campo2">Campo 2:</label>
+			<input type="text" id="campo2" oninput="FUNCIONSAS(event);"/>
+			<br/><br/>
+			<label>Resultado:</label>
+			<span id="resultado">0</span>
+		</form>
+
+		<h1>Formular un hidruro</h1>
+		<form>
+			<label for="campoHidruro">Hidruro de: </label>
+			<input type="text" id="campoHidruro"/>
+			<select id="valenciaHidruro" name="valenciaHidruro">
+				<option value="1">I</option>
+				<option value="2">II</option>
+				<option value="3">III</option>
+				<option value="4">IV</option>
+				<option value="5">V</option>
+			</select>
+			<button onclick="buscarHidruro(event)">Formular</button>
+			<p id="resHidruro">Introduce datos</p>
+		</form>
+
+		<h1>Formular un óxido</h1>
+		<form>
+			<label for="campoOxido">Óxido de: </label>
+			<input type="text" id="campoOxido" oninput="buscarOxido();"/>
+			<select id="valenciaOxido" name="valenciaOxido">
+				<option value="1">I</option>
+				<option value="2">II</option>
+				<option value="3">III</option>
+				<option value="4">IV</option>
+				<option value="5">V</option>
+			</select>
+			<button onclick="buscarOxido(event)">Formular</button>
+			<p id="resOxido">Introduce datos</p>
+		</form>
+
+		
+		<h1>Formular una sal binaria</h1>
+		<form>
+			<input type="text" id="salBin1"/>
+			<label for="salBin1">-uro de</label>
+			<input type="text" id="salBin2"/>
+			<select id="valenciaSalBin" name="valenciaSalBin">
+				<option value="1">I</option>
+				<option value="2">II</option>
+				<option value="3">III</option>
+				<option value="4">IV</option>
+				<option value="5">V</option>
+			</select>
+			<button onclick="buscarSalBinaria(event)">Formular</button>
+			<p id="resBin">Introduce datos</p>
+		</form>
+
+		<h1>Formular un ácido</h1>
+		<form>
+			<label>Ácido </label>
+			<select id="prefEspAci" name="prefEspAci">
+				<option value="3">---</option> <!-- Si no hay prefijo es "Orto" -->
+				<option value="1">Meta</option>
+				<option value="2">Piro</option>
+				<option value="3">(Orto)</option>
+			</select>
+			<select id="prefAci" name="prefAci">
+				<option value="0">---</option>
+				<option value="1">Hip-</option>
+				<option value="2">Per-</option>
+			</select>
+			<input type="text" id="salAci"/>
+			<select id="sufAci" name="sufAci">
+				<option value="0">---</option>
+				<option value="1">-oso</option>
+				<option value="2">-ico</option>
+			</select>
+			<button>Formular (inacabado)</button>
+			<p id="resAci">Introduce datos</p>
+		</form>
+
+		<h1>Formular una sal oxisal</h1>
+		<form>
+			<select id="prefEspOxi" name="prefEspOxi">
+				<option value="3">---</option> <!-- Si no hay prefijo es "Orto" -->
+				<option value="1">Meta</option>
+				<option value="2">Piro</option>
+				<option value="3">(Orto)</option>
+			</select>
+			<select id="prefOxi" name="prefOxi">
+				<option value="0">---</option>
+				<option value="1">Hip-</option>
+				<option value="2">Per-</option>
+			</select>
+			<input type="text" id="salOxi1"/>
+			<select id="sufOxi" name="sufOxi">
+				<option value="0">---</option>
+				<option value="1">-ato</option>
+				<option value="2">-ito</option>
+			</select>
+			<label> de </label>
+			<input type="text" id="salOxi2"/>
+			<select id="valenciaSalOxi" name="valenciaSalOxi">
+				<option value="1">I</option>
+				<option value="2">II</option>
+				<option value="3">III</option>
+				<option value="4">IV</option>
+				<option value="5">V</option>
+			</select>
+			<button>Formular (inacabado)</button>
+			<p id="resSalOxi">Introduce datos</p>
+		</form>
+
+		<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+	</body>
+
+</html>

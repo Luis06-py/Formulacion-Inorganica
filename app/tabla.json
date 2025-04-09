@@ -1,17 +1,18 @@
 {
-    "especial":{
-        "Amoniaco":"NH3",
-        "Fosfano": "PH3",
-        "Arsano": "AsH3",
-        "Estibinano": "SbH3",
-        "Metano":"CH4",
-        "Silano":"SiH4",
-        "Ácido clorhídrico":"HCl",
-        "Ácido permangánico":"HMnO4",
-        "Ácido dicrómico": "H2Cr2O7",
-        "Ácido crómico":"H2CrO4",
-        "Ácido persulfúrico":"H2S2O8",
-        "NH3": "Amoniaco"},
+	"especial":{
+		"Amoniaco":"NH3",
+		"Fosfano": "PH3",
+		"Arsano": "AsH3",
+		"Estibinano": "SbH3",
+		"Metano":"CH4",
+		"Silano":"SiH4",
+		"Ácido clorhídrico":"HCl",
+		"Ácido permangánico":"HMnO4",
+		"Ácido dicrómico": "H2Cr2O7",
+		"Ácido crómico":"H2CrO4",
+		"Ácido persulfúrico":"H2S2O8",
+		"NH3": "Amoniaco"
+	},
     "especialS":{
 		"PH3": "Fosfano",
 		"AsH3": "Arsano",
