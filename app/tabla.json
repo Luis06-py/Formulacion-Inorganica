@@ -27,6 +27,7 @@
 		"H2CrO4": "Ácido crómico",
 		"H2S2O8": "Ácido persulfúrico"
     },
+	
 	"todos": ["H", "Li", "Na", "K", "Rb", "Cs", "Fr", "NH4", "Be", "Mg", "Ca", "Sr", "Ba", "Ra", "Zn", "Al", "Bi", "F", "Cl", "Br", "I", "O", "S", "Se", "Te", "N", "P", "As", "Sb", "C", "Si", "Cu", "Hg", "Au", "Tl", "Fe", "Co", "Ni", "Sm", "Eu", "Yb", "Pb", "Ge", "Sn", "Pt", "Po"],
 	
 	"valencias": {

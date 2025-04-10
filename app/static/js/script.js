@@ -25,9 +25,18 @@ function obtenerMCD(a, b) {
 	return a;
 }
 
+function MCDtres(a, b, c) {
+	return obtenerMCD(obtenerMCD(a, b), c)
+}
+
 function simplificar(a, b) {
 	const mcd = obtenerMCD(a, b);
 	return [a / mcd, b / mcd];
+}
+
+function simplificarTres(a, b, c) {
+	let dc = MCDtres(a, b, c);
+	return [a/dc, b/dc, c/dc]
 }
 
 function buscarHidruro(event) {
@@ -156,4 +165,82 @@ function buscarSalBinaria(event) {
 		resB.textContent = "No se ha encontrado el primer elemento";
 		
 	}
+}
+
+function buscarAcido(event) {
+	event.preventDefault();
+	let prefEsp = parseInt(document.getElementById('prefEspAci').value.trim(), 10)
+	let prefAci = document.getElementById('prefAci').value.trim()
+	let sufAci = document.getElementById('sufAci').value.trim()
+	const salAci = document.getElementById('salAci').value.trim()
+	let acido;
+
+	/* Meta (1 H2O) Piro (2 H2O) Orto (3 H2O) */
+
+	/* Identificar el prefijo de forma hipo-oso, etc */
+	if (prefAci !== "0") {
+		acido = prefAci;
+		if (sufAci !== "0") {
+			acido += sufAci;
+		} else {
+			sufAci = "";
+		}
+	} else if (sufAci !== "0") {
+		acido = "-" + sufAci;
+		prefAci = ""
+	} else {
+		acido = null; /* No se rellenó ningun dato */
+	}
+
+	if (acido !== null && acido in tabla.ácidos) {
+		
+		let simbolo;
+		let nombre;
+		if (tabla.valencias && tabla.valencias[salAci]) {
+			simbolo = tabla.valencias[salAci]["símbolo"];
+			nombre = tabla.valencias[salAci]["nombre"];
+			nombre = tabla.abreviado[nombre]
+		} else if (tabla.valencias2 && tabla.valencias2[salAci]) {
+			simbolo = tabla.valencias2[salAci]["símbolo"];
+			nombre = tabla.valencias2[salAci]["nombre"]
+			nombre = tabla.abreviado[nombre]
+		} else {
+			simbolo = null;
+			nombre = null;
+		}
+
+		if (simbolo !== null) {
+			const val = tabla.ácidos[acido][simbolo];
+
+			/* Formular el Óxido */
+			const numeros = simplificar(2, val);
+			
+			/* Óxido + H2O, (átomos Elemento + átomos Oxígeno + átomos Hidrógeno) */
+			let mult = 1;
+			let prefijoEsp = "";
+			if (simbolo in tabla.especiales) {
+				mult = parseInt(prefEsp)
+				const list = ["Meta", "Piro", "(Orto)"];
+				prefijoEsp = list[mult-1];
+			}
+			numeros[1] += mult*1
+			numeros[2] = mult*2
+			
+			let resultado = simplificarTres(numeros[0], numeros[1], numeros[2]);
+			let res1 = "H" + resultado[2] + simbolo + resultado[0] + "O" + resultado[1];
+			res1 = res1.replace(/1/g, '');
+			prefAci = prefAci.replace("-", "");
+			console.log(prefAci)
+			let res2 = "Ácido " + prefijoEsp + prefAci + nombre + sufAci + " " + res1
+			const resA = document.getElementById('resAci');
+			resA.textContent = res2
+		} else {
+			const resA = document.getElementById('resAci');
+			resA.textContent = "El elemento no se ha podido identificar"
+		}
+	} else {
+		const resA = document.getElementById('resAci');
+		resA.textContent = "Has cometido un error"
+	}
+
 }
