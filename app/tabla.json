@@ -70,7 +70,7 @@
 		"Si": {"nombre": "Silicio", "valencia":4, "símbolo": "Si"},
 
 		
-		"Hidrógrno": {"nombre": "Hidrógeno", "valencia": 1, "símbolo": "H"},
+		"Hidrógeno": {"nombre": "Hidrógeno", "valencia": 1, "símbolo": "H"},
 		"Litio": {"nombre": "Litio", "valencia": 1, "símbolo": "Li"},
 		"Sodio": {"nombre": "Sodio", "valencia": 1, "símbolo": "Na"},
 		"Potasio": {"nombre": "Potasio", "valencia": 1, "símbolo": "K"},
@@ -136,7 +136,7 @@
 		"Oro": {"nombre": "Oro", "valencia": [1,3], "símbolo": "Au"},
 		"Talio": {"nombre": "Talio", "valencia": [1,3], "símbolo": "Tl"},
 
-		"Hietto": {"nombre": "Hierro", "valencia": [2,3], "símbolo": "Fe"},
+		"Hierro": {"nombre": "Hierro", "valencia": [2,3], "símbolo": "Fe"},
 		"Cobalto": {"nombre": "Cobalto", "valencia": [2,3], "símbolo": "Co"},
 		"Níquel": {"nombre": "Níquel", "valencia": [2,3], "símbolo": "Ni"},
 		"Samario": {"nombre": "Samario", "valencia": [2,3], "símbolo": "Sm"},
@@ -221,7 +221,7 @@
 		"Ho": "Holmio",
 		"Er": "Erbio",
 		"Tm": "Tulio",
-		"Yb": "Iterbio",
+		"Yb": "Yterbio",
 		"Lu": "Lutecio",
 		"Hf": "Hafnio",
 		"Ta": "Tantalio",
