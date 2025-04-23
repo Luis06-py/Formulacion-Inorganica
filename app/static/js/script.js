@@ -1,16 +1,3 @@
-function FUNCIONSAS(event) {
-	event.preventDefault();
-	// Obtener los valores de los dos campos de texto
-	var valor1 = document.getElementById('campo1').value;
-	var valor2 = document.getElementById('campo2').value;
-	
-	// Sumar como cadenas (sin parseInt)
-	var resultado = valor1 + valor2;
-	
-	// Mostrar el resultado en el HTML
-	document.getElementById('resultado').innerText = resultado;
-}
-
 function numeroRomano(num) {
 	const numerosRomanos = ["", "(I)", "(II)", "(III)", "(IV)", "(V)"];
 	return numerosRomanos[num] || "Número fuera de rango";
